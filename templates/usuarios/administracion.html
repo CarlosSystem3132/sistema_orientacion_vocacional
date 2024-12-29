@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Panel de Administración</h2>
+<h3>Unidades Educativas</h3>
+<ul>
+    {% for unidad in unidades_educativas %}
+    <li>{{ unidad.nombre }} - {{ unidad.direccion }}</li>
+    {% endfor %}
+</ul>
+<h3>Generar Código QR</h3>
+<a href="{% url 'generar_qr' %}" class="btn btn-primary">Generar nuevo código QR</a>
+{% endblock %}
